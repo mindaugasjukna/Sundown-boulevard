@@ -1,0 +1,12 @@
+// All files imported here, written to App.css
+
+// Reset values, import base values and variables
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./base.scss";
+
+// Components
+@import "./components/navbar";
+
+// Pages
+@import "./pages/home";

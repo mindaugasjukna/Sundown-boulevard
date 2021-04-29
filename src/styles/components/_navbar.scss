@@ -1,0 +1,17 @@
+#Navbar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 100px;
+
+  img {
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin: 0 auto;
+    line-height: 100px;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+}
