@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DateTimePicker from "react-datetime-picker";
 import validator from "validator";
 import { Link } from "react-router-dom";
@@ -33,7 +33,6 @@ export default function Order({
   };
 
   // Email validation
-
   const validateEmail = (e) => {
     var email = e.target.value;
     setEmail(email);
@@ -47,6 +46,10 @@ export default function Order({
       setEmail("");
     }
   };
+
+  useEffect(() => {
+    setEmail("");
+  }, []);
 
   return (
     <div id="Order">
@@ -71,11 +74,7 @@ export default function Order({
             <button onClick={incrementCount}>+</button>
           </div>
           <div>
-            <input
-              type="text"
-              id="userEmail"
-              onChange={(e) => validateEmail(e)}
-            ></input>
+            <input type="text" onChange={(e) => validateEmail(e)}></input>
             <p>{emailError}</p>
             {email !== "" ? (
               <Link to="/receipt">

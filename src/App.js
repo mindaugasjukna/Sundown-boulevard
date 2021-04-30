@@ -8,6 +8,7 @@ import Drinks from "./pages/Drinks";
 import Order from "./pages/Order";
 import Receipt from "./pages/Receipt";
 import Navbar from "./components/Navbar";
+import Findyourorder from "./pages/Findyourorder";
 
 function App() {
   const [dish, setDish] = useState();
@@ -59,6 +60,8 @@ function App() {
             />
           )}
         />
+
+        <Route path="/findyourorder" render={() => <Findyourorder />} />
       </Router>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Receipt({
@@ -8,7 +8,18 @@ export default function Receipt({
   date,
   email,
 }) {
-  //localStorage.setItem(email);
+  const receipt = {
+    email: email,
+    dish: dish.strMeal,
+    chosenDrinks: chosenDrinks,
+    peopleAmount: peopleAmount,
+    date: date.toString(),
+  };
+  //console.log(receipt);
+
+  useEffect(() => {
+    localStorage.setItem("info", JSON.stringify(receipt));
+  }, []);
 
   return (
     <div id="Receipt">
@@ -25,13 +36,12 @@ export default function Receipt({
       <p>Amount of people: {peopleAmount}</p>
       <br />
 
-      <p>Date: {date.toLocaleDateString()}</p>
-      <p>Time: {date.toLocaleTimeString()}</p>
+      <p>Date: {date.toString()}</p>
       <br />
 
       <p>By email: {email}</p>
 
-      <Link exact to="/">
+      <Link to="/">
         <button className="cta-button">Back to home</button>
       </Link>
     </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BeatLoader from "react-spinners/BeatLoader";
 
 export default function Drinks({ chosenDrinks, setChosenDrinks }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [drinks, setDrinks] = useState([]);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
 
