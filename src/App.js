@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const [dish, setDish] = useState();
-  const [drinks, setDrinks] = useState([]);
+  const [chosenDrinks, setChosenDrinks] = useState([]);
 
   return (
     <div className="App">
@@ -22,7 +22,12 @@ function App() {
         />
         <Route
           path="/drinks"
-          render={() => <Drinks setDrinks={setDrinks} drinks={drinks} />}
+          render={() => (
+            <Drinks
+              setChosenDrinks={setChosenDrinks}
+              chosenDrinks={chosenDrinks}
+            />
+          )}
         />
       </Router>
     </div>
