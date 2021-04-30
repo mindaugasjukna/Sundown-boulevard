@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Dish from "./pages/Dish";
 import Drinks from "./pages/Drinks";
 import Order from "./pages/Order";
+import Receipt from "./pages/Receipt";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -43,6 +44,18 @@ function App() {
               setDate={setDate}
               email={email}
               setEmail={setEmail}
+            />
+          )}
+        />
+        <Route
+          path="/receipt"
+          render={() => (
+            <Receipt
+              dish={dish}
+              chosenDrinks={chosenDrinks}
+              peopleAmount={peopleAmount}
+              date={date}
+              email={email}
             />
           )}
         />
