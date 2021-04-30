@@ -5,8 +5,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 export default function Drinks({ chosenDrinks, setChosenDrinks }) {
   const [isLoading, setIsLoading] = useState(true);
   const [drinks, setDrinks] = useState([]);
-  const [drinkStyleActive, setDrinkStyleActive] = useState(false);
-  const [style, setStyle] = useState({ backgroundColor: "" });
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const fetchDrinks = () => {
     fetch("https://api.punkapi.com/v2/beers")
@@ -14,6 +13,7 @@ export default function Drinks({ chosenDrinks, setChosenDrinks }) {
         return response.json();
       })
       .then((data) => {
+        setChosenDrinks([]);
         setDrinks(data);
         setIsLoading(false);
       })
@@ -41,12 +41,18 @@ export default function Drinks({ chosenDrinks, setChosenDrinks }) {
       // And color is as not chosen
       e.currentTarget.style.backgroundColor = "";
     }
+    setShowErrorMessage(false);
+  };
+
+  // If no drinks are chosen, preview error message
+  const noDrinksChosen = () => {
+    setShowErrorMessage(true);
   };
 
   useEffect(() => {
     fetchDrinks();
-    console.log(chosenDrinks);
-  }, [chosenDrinks]);
+    //console.log(chosenDrinks);
+  }, []);
 
   return (
     <div id="Drinks">
@@ -59,7 +65,6 @@ export default function Drinks({ chosenDrinks, setChosenDrinks }) {
               <div
                 className={`drink-single${drink.id}`}
                 key={drink.id}
-                style={style}
                 onClick={(e) => chooseDrink(drink, e)}
               >
                 <div className="img-container">
@@ -77,9 +82,24 @@ export default function Drinks({ chosenDrinks, setChosenDrinks }) {
             <div className="next-box">
               <p>Next pick date</p>
               <p>And amount</p>
-              <Link to="/drinks">
-                <button>Next</button>
-              </Link>
+              {chosenDrinks[0] ? (
+                <Link to="/order">
+                  <button className="cta-button">Next</button>
+                </Link>
+              ) : (
+                <div onClick={() => noDrinksChosen()}>
+                  <button className="cta-button">Next</button>
+                  <p
+                    style={
+                      showErrorMessage
+                        ? { display: "block" }
+                        : { display: "none" }
+                    }
+                  >
+                    Please choose a drink
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

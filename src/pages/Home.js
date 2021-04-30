@@ -9,7 +9,7 @@ export default function Home() {
         <div className="order-flow-box">
           <h2>Order flow box</h2>
           <Link to="/dish">
-            <button>Order</button>
+            <button className="cta-button">Order</button>
           </Link>
         </div>
       </div>
@@ -19,7 +19,7 @@ export default function Home() {
           <h2>Find your order</h2>
           <p>Enter email:</p>
           <input type="text" placeholder="Insert email here"></input>
-          <button>Find</button>
+          <button className="cta-button">Find</button>
         </div>
         <div className="content-box">
           <p>Lorem lipsum</p>

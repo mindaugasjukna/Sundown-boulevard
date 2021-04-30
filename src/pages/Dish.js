@@ -37,6 +37,9 @@ export default function Dish({ setDish, dish }) {
               <h2>{dish.strMeal}</h2>
               <p>Area: {dish.strArea}</p>
               <p>Category: {dish.strCategory}</p>
+              <button className="cta-button" onClick={fetchDish}>
+                Generate new
+              </button>
             </div>
           </div>
 
@@ -47,7 +50,7 @@ export default function Dish({ setDish, dish }) {
               <p>PICK SOME</p>
               <p>DRINKS NEXT</p>
               <Link to="/drinks">
-                <button>Next</button>
+                <button className="cta-button">Next</button>
               </Link>
             </div>
           </div>

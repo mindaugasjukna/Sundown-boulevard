@@ -21,7 +21,7 @@ p {
   margin: 0 auto;
 }
 
-button {
+.cta-button {
   padding: 15px 70px;
   border-radius: 20px;
   text-transform: uppercase;
@@ -32,7 +32,7 @@ button {
   cursor: pointer;
   transition: 0.2s;
 }
-button:hover {
+.cta-button:hover {
   background-color: #df4352;
 }
 
@@ -105,9 +105,15 @@ button:hover {
   grid-template-rows: 1fr 1fr;
   height: 500px;
   border: 2px solid black;
+  position: relative;
 }
 #Dish .col-1 img {
   max-width: 200px;
+}
+#Dish .col-1 button {
+  position: absolute;
+  left: 35px;
+  bottom: 10px;
 }
 #Dish .col-2 {
   margin-left: 20px;
@@ -135,6 +141,19 @@ button:hover {
 }
 #Drinks .col-2 .next-box {
   padding: 20px;
+  border: 2px solid black;
+}
+
+#Order .col-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 500px;
+  grid-gap: 10px;
+}
+#Order .col-1 {
+  border: 2px solid black;
+}
+#Order .col-2 {
   border: 2px solid black;
 }
 

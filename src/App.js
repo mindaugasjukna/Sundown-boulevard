@@ -5,11 +5,15 @@ import "./App.css";
 import Home from "./pages/Home";
 import Dish from "./pages/Dish";
 import Drinks from "./pages/Drinks";
+import Order from "./pages/Order";
 import Navbar from "./components/Navbar";
 
 function App() {
   const [dish, setDish] = useState();
   const [chosenDrinks, setChosenDrinks] = useState([]);
+  const [peopleAmount, setPeopleAmount] = useState(1);
+  const [date, setDate] = useState(new Date());
+  const [email, setEmail] = useState("");
 
   return (
     <div className="App">
@@ -26,6 +30,19 @@ function App() {
             <Drinks
               setChosenDrinks={setChosenDrinks}
               chosenDrinks={chosenDrinks}
+            />
+          )}
+        />
+        <Route
+          path="/order"
+          render={() => (
+            <Order
+              peopleAmount={peopleAmount}
+              setPeopleAmount={setPeopleAmount}
+              date={date}
+              setDate={setDate}
+              email={email}
+              setEmail={setEmail}
             />
           )}
         />

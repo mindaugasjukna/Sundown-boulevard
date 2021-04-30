@@ -1,0 +1,16 @@
+#Order {
+  .col-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 500px;
+    grid-gap: 10px;
+  }
+
+  .col-1 {
+    border: 2px solid black;
+  }
+
+  .col-2 {
+    border: 2px solid black;
+  }
+}
