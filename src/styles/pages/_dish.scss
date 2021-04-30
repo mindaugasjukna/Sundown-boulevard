@@ -1,0 +1,28 @@
+#Dish {
+  /*  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; */
+  .col-container {
+    display: flex;
+  }
+
+  .col-1 {
+    width: 40vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 500px;
+    border: 2px solid black;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .col-2 {
+    margin-left: 20px;
+    .next-box {
+      padding: 20px;
+      border: 2px solid black;
+    }
+  }
+}

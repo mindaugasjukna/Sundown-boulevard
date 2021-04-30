@@ -1,13 +1,17 @@
 import React from "react";
 import logo from "../img/logo.png";
+import { NavLink } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <div id="Navbar">
-      <img src={logo} alt="logo"></img>
-      <h3>Restauranter</h3>
-      <h3>Produkter</h3>
-      <h3>Nyhedsbrev</h3>
-      <h3>Kontakt</h3>
+      <NavLink exact to="/">
+        <img src={logo} alt="logo"></img>
+      </NavLink>
+      <li>Restauranter</li>
+      <li>Produkter</li>
+      <li>Nyhedsbrev</li>
+      <li>Kontakt</li>
     </div>
   );
 }
